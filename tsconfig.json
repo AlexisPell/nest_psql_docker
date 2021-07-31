@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": true,
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"target": "es2017",
+		"sourceMap": true,
+		"outDir": "./dist",
+		"baseUrl": "./",
+		"incremental": true,
+		"skipLibCheck": true,
+		"lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+		"moduleResolution": "node",
+		"composite": false,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"noImplicitThis": true,
+		"noUnusedParameters": false, //
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		// To disable emit with unused params
+		"noUnusedLocals": true,
+		// next 2 allows aviod `import * as entity from`
+		"esModuleInterop": true,
+		"rootDir": "src"
+	}
+}
