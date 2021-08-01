@@ -1,4 +1,3 @@
-// import {AuthModule} from './auth/auth.module';
 import {UserRoles} from './config/dbInnerTables/userRoles.model';
 import {Role} from './roles/role.model';
 import {Module} from '@nestjs/common';
@@ -11,6 +10,7 @@ import {UsersModule} from './users/users.module';
 // Entities
 import {User} from './users/user.model';
 import {RolesModule} from './roles/roles.module';
+import {AuthModule} from './auth/auth.module';
 
 @Module({
 	controllers: [],
@@ -31,7 +31,7 @@ import {RolesModule} from './roles/roles.module';
 		}),
 		UsersModule,
 		RolesModule,
-		// AuthModule,
+		AuthModule,
 	],
 })
 export class AppModule {}

@@ -10,7 +10,7 @@ async function bootstrap() {
 		.setTitle('NEST API Documentation')
 		.setDescription('Some pretty js-swagger documentation')
 		.setVersion('1.0.0')
-		.addTag('Hello Tag')
+		.addTag('Some docs')
 		.build();
 
 	const document = SwaggerModule.createDocument(app, config);
