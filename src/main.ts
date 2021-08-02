@@ -1,7 +1,8 @@
-import {API_PREFIX} from './config/constants/api';
+import {API_PREFIX} from './common/constants/api';
 import {NestFactory} from '@nestjs/core';
 import {AppModule} from './app.module';
 import {SwaggerModule, DocumentBuilder} from '@nestjs/swagger';
+import {ValidationPipe} from './common/pipes/validation.pipe';
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
@@ -15,6 +16,8 @@ async function bootstrap() {
 
 	const document = SwaggerModule.createDocument(app, config);
 	SwaggerModule.setup(`${API_PREFIX}/docs`, app, document);
+
+	app.useGlobalPipes(new ValidationPipe());
 
 	const PORT = process.env.PORT || 5000;
 	await app.listen(PORT, () => console.log(`Serve is running on port ${PORT}`));

@@ -1,16 +1,21 @@
-import {UserRoles} from './config/dbInnerTables/userRoles.model';
-import {Role} from './roles/role.model';
+import path from 'path';
+import {ConfigModule} from '@nestjs/config';
 import {Module} from '@nestjs/common';
 import {SequelizeModule} from '@nestjs/sequelize';
-import {ConfigModule} from '@nestjs/config';
+import {ServeStaticModule} from '@nestjs/serve-static';
+
+// Models
+import {UserRoles} from './common/dbInnerTables/userRoles.model';
+import {Post} from 'src/posts/post.model';
+import {Role} from './roles/role.model';
+import {User} from './users/user.model';
 
 // Modules
-import {UsersModule} from './users/users.module';
-
-// Entities
-import {User} from './users/user.model';
 import {RolesModule} from './roles/roles.module';
 import {AuthModule} from './auth/auth.module';
+import {UsersModule} from './users/users.module';
+import {PostsModule} from './posts/posts.module';
+import {FilesModule} from './files/files.module';
 
 @Module({
 	controllers: [],
@@ -18,6 +23,9 @@ import {AuthModule} from './auth/auth.module';
 	imports: [
 		ConfigModule.forRoot({
 			envFilePath: `.${process.env.NODE_ENV}.env`,
+		}),
+		ServeStaticModule.forRoot({
+			rootPath: path.resolve(__dirname, 'static'),
 		}),
 		SequelizeModule.forRoot({
 			dialect: 'postgres',
@@ -27,11 +35,13 @@ import {AuthModule} from './auth/auth.module';
 			password: process.env.POSTGRES_PASSWORD,
 			database: process.env.POSTGRES_DB,
 			autoLoadModels: true,
-			models: [User, Role, UserRoles],
+			models: [User, Role, UserRoles, Post],
 		}),
+		AuthModule,
 		UsersModule,
 		RolesModule,
-		AuthModule,
+		PostsModule,
+		FilesModule,
 	],
 })
 export class AppModule {}

@@ -1,4 +1,4 @@
-import {UserRoles} from './../config/dbInnerTables/userRoles.model';
+import {UserRoles} from '../common/dbInnerTables/userRoles.model';
 import {RolesModule} from './../roles/roles.module';
 import {Role} from './../roles/role.model';
 import {SequelizeModule} from '@nestjs/sequelize';

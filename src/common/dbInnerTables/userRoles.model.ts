@@ -1,5 +1,5 @@
-import {User} from './../../users/user.model';
-import {Role} from './../../roles/role.model';
+import {User} from '../../users/user.model';
+import {Role} from '../../roles/role.model';
 import {Column, DataType, ForeignKey, Model, Table} from 'sequelize-typescript';
 
 @Table({tableName: 'user_roles', createdAt: false, updatedAt: false})

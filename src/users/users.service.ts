@@ -1,6 +1,6 @@
 import {BanUserDto} from './dto/ban-user.dto';
 import {AddRoleDto} from './dto/add-role.dto';
-import {DEFAULT_USER_ROLES} from './../config/constants/roles';
+import {DEFAULT_USER_ROLES} from '../common/constants/roles';
 import {RolesService} from './../roles/roles.service';
 import {CreateUserDto} from './dto/create-user.dto';
 import {User} from './user.model';

@@ -1,7 +1,7 @@
 import {Role} from './role.model';
 import {RolesService} from './roles.service';
 import {CreateRoleDto} from './dto/create-role.dto';
-import {API_PREFIX} from './../config/constants/api';
+import {API_PREFIX} from '../common/constants/api';
 import {Body, Controller, Get, Param, Post} from '@nestjs/common';
 import {
 	ApiTags,

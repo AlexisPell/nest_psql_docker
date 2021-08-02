@@ -1,6 +1,6 @@
 import {AuthService} from './auth.service';
 import {CreateUserDto} from './../users/dto/create-user.dto';
-import {API_PREFIX} from './../config/constants/api';
+import {API_PREFIX} from '../common/constants/api';
 import {Body, Controller, Post} from '@nestjs/common';
 import {ApiTags} from '@nestjs/swagger';
 

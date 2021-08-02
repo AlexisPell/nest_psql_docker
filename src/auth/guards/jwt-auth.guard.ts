@@ -1,5 +1,5 @@
 import {User} from './../../users/user.model';
-import {MyRequest} from '../../config/interfaces/request.interface';
+import {MyRequest} from '../../common/interfaces/request.interface';
 import {JwtService} from '@nestjs/jwt';
 import {
 	CanActivate,

@@ -1,4 +1,4 @@
-import {UserRoles} from './../config/dbInnerTables/userRoles.model';
+import {UserRoles} from '../common/dbInnerTables/userRoles.model';
 import {User} from './../users/user.model';
 import {
 	BelongsToMany,

@@ -1,6 +1,6 @@
 import {User} from './../../users/user.model';
 import {ROLES_KEY} from './../decorators/roles-auth.decorator';
-import {MyRequest} from '../../config/interfaces/request.interface';
+import {MyRequest} from '../../common/interfaces/request.interface';
 import {JwtService} from '@nestjs/jwt';
 import {
 	CanActivate,
